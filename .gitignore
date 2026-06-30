@@ -12,7 +12,7 @@ pbc_patch_based_results_*/
 # unused files
 unused/*
 
-.claude
+.claude/*
 
 same_pac*
 

@@ -1,0 +1,22 @@
+# --- Python ---
+__pycache__/
+.ipynb_checkpoints/
+
+# --- Training artifacts / result dirs (timestamped) ---
+# e.g. dc_single_pure_results_*, dc_transfer_results_*, pbc_patch_based_results_*
+dc_single_*/
+dc_transfer_*/
+pbc_patch_based_results_*/
+
+
+# unused files
+unused/*
+
+.claude
+
+same_pac*
+
+top_layers_analysis.txt
+
+
+

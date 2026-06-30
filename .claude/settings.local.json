@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /home/dpetrini/devel/DNN/pytorch/classifiers_2025ng -name \"model_utils.py\" 2>/dev/null; find /home/dpetrini/devel/DNN/pytorch -name \"model_utils.py\" 2>/dev/null)",
+      "Read(//home/dpetrini/devel/DNN/pytorch/**)",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}

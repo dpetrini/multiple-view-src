@@ -36,25 +36,23 @@ def download_expand_tar(remote_path, file_name):
       print('File ', file_name, ' already downloaded and uncompressed')
 
 
-def expand_tar(remote_path, file_name):
+def expand_tar(file_name):
     """ 
     IMPORTANT: we use sparse -S option always. Check it to compress!
     """
-      subprocess.run(['ls'])
-      file_type = file_name.split('.')[-1]
-      if file_type == 'tar':
-        command_option = '-xvSf'
-      elif file_type == 'xz':
-        command_option = '-xf'
-      elif file_type == 'gz':
-        command_option = '-xvzSf'
-      elif file_type == 'bz2':
-        command_option = '-xvjSf'
-      print('Uncompressing ', file_name, ' with', command_option, ' ...')
-      subprocess.run(['tar', command_option, file_name])
-      subprocess.run(['ls'])
-    else:
-      print('File ', file_name, ' already uncompressed')
+    subprocess.run(['ls'])
+    file_type = file_name.split('.')[-1]
+    if file_type == 'tar':
+      command_option = '-xvSf'
+    elif file_type == 'xz':
+      command_option = '-xf'
+    elif file_type == 'gz':
+      command_option = '-xvzSf'
+    elif file_type == 'bz2':
+      command_option = '-xvjSf'
+    print('Uncompressing ', file_name, ' with', command_option, ' ...')
+    subprocess.run(['tar', command_option, file_name])
+    subprocess.run(['ls'])
 
 
 def download_expand_tar_old(remote_path, file_name):

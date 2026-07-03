@@ -19,7 +19,7 @@ def download_expand_tar(remote_path, file_name):
       print('Copying ', file_name, ' from remote server...')
       copyfile(os.path.join(remote_path, file_name), 
               os.path.join(os.getcwd(), file_name))
-      !ls
+      subprocess.run(['ls'])
       file_type = file_name.split('.')[-1]
       if file_type == 'tar':
         command_option = '-xvSf'
@@ -31,7 +31,7 @@ def download_expand_tar(remote_path, file_name):
         command_option = '-xvjSf'
       print('Uncompressing ', file_name, ' with', command_option, ' ...')
       subprocess.run(['tar', command_option, file_name])
-      !ls
+      subprocess.run(['ls'])
     else:
       print('File ', file_name, ' already downloaded and uncompressed')
 
@@ -45,7 +45,7 @@ def download_expand_tar_old(remote_path, file_name):
       print('Copying ', file_name, ' from remote server...')
       copyfile(os.path.join(remote_path, file_name),
               os.path.join(os.getcwd(), file_name))
-      !ls
+      subprocess.run(['ls'])
       print('Uncompressing ', file_name, ' ...')
       if file_name[-3:] == 'tar':
         subprocess.run(['tar', '-xvf', file_name])
@@ -53,7 +53,7 @@ def download_expand_tar_old(remote_path, file_name):
         subprocess.run(['tar', '-xvjSf', file_name])
       else:
         print('Unknown file extension')
-      !ls
+      subprocess.run(['ls'])
     else:
       print('File ', file_name, ' already downloaded and uncompressed')
 

@@ -247,7 +247,7 @@ def load_model(mode, network, model_file, weights=True,
         print('\nLoading model for transfer learning.\n')
         # model.load_state_dict(torch.load(model_file, map_location=device))  31-03-2026
         model.load_state_dict(torch.load(model_file, map_location='cpu'))
-        print(inplanes, extract_layers)
+        #print(inplanes, extract_layers)
         return model, inplanes, extract_layers
 
     if mode == 'learn_resize_input':

@@ -1,4 +1,4 @@
-# Side Classifier: 2 views classifier using Sinai Patch Clf for CC, MLO
+# Side Classifier: 2 views classifier using Patch Clf for CC, MLO
 
 import sys
 import collections

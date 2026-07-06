@@ -60,7 +60,7 @@ def create_model_(name, source="auto", pretrained=False, **kwargs):
         raise ValueError(f"Model '{name}' not found anywhere.")
 
     except Exception as e:
-        raise ValueError(f"Erro ao criar modelo '{name}': {e}")
+        raise ValueError(f"Error while creating model '{name}': {e}")
 
 # ---------------------------------------------------------
 #       TESTE SE O BATCH CABE NA GPU
@@ -144,18 +144,18 @@ def find_max_bs(
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     results = {}
 
-    print(f"Usando GPU: {torch.cuda.get_device_name(0)}")
-    print(f"Modo de batch: {batch_mode}\n")
+    print(f"Using GPU: {torch.cuda.get_device_name(0)}")
+    print(f"Batch mode: {batch_mode}\n")
 
     for name in model_names:
-        print(f"== Testando {name} ==")
+        print(f"== Testing {name} ==")
 
         model_fn = lambda name=name: create_model_(name)
 
         max_batch = find_max_batch(model_fn, device, input_size, max_test, batch_mode)
         results[name] = max_batch
 
-        print(f"Batch máximo ({batch_mode}) para {name}: {max_batch}\n")
+        print(f"Maximum batch ({batch_mode}) for {name}: {max_batch}\n")
 
     # # Salvar CSV
     # with open(csv_path, "w", newline='') as f:

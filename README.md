@@ -13,6 +13,11 @@ The code is an evolution of the code used in these papers.
  - Supports image resize to double size or half size, using two approaches fixed-resize and Learn-to-resize (comparing with default 1.152x896)
  - Supports multiple datasets (CBIS-DDSM and VinDr-Mammo in current version)
 
+### Datasets
+CBIS-DDSM is available from [Hugging Face](https://huggingface.co/datasets/dpetrini/cbis_ddsm_rev), already supported in main Notebook.CBIS-DDSM patches dataset coming soon. You can download the already pre-processed VinDr-Mammo [full-images 1.152x896](https://drive.google.com/file/d/1kbAKEVpb6MPDBbjyzzszcVjmLHnCkkDg/view?usp=drive_link) and [patches 224x224](https://drive.google.com/file/d/1dQdg6SqyJRebwD6ALGDh1hufkYb6YOoi/view?usp=drive_link). Place them in the google drive as mentioned in main Notebook.
+
+### Preprocessing
+Code used in preprocessing of datasets are available [here](https://github.com/dpetrini/prepare_datasets/tree/main/vindr).
 
 ### Reference
 If you use want to know more, please check complete text [HERE](https://arxiv.org/abs/2503.19945). If you want to cite this work please use reference below.
